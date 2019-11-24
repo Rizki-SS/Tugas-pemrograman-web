@@ -23,17 +23,18 @@ $result_blog = $db->fetchAll();
             if (!isset($_GET['id'])) {
                 foreach ($result_blog as $key) {
                     ?>
-
-                    <div class="row w-100">
+                    <div class="row shadow-sm" style="margin:0px 10px 20px; padding: 10px;">
                         <div class="col">
                             <h2><?= $key['TITLE'] ?></h2>
                             <hr>
                             <small><?= $key['DATE'] ?></small>
                             <p class="m-25">
                                 <?= substr($key['CONTEN'], 0, 300) ?>...
-                            </p>
-                            <a href="../blog.php?id=<?= $key['ID_BLOG'] ?>" type="button" class="btn btn-large btn-block btn-default">button</a>
 
+                            </p>
+                            <div class="float-right">
+                                <a href="../blog.php?id=<?= $key['ID_BLOG'] ?>" type="button" class="btn btn-large btn-block btn-default">button</a>
+                            </div>
                         </div>
                     </div>
 
@@ -56,9 +57,9 @@ $result_blog = $db->fetchAll();
 
                 <h2><?= $result_blog1['TITLE'] ?></h2>
                 <hr>
-                <small><?= $result_blog1['DATE'] ?></small>
+                <small><b>On : </b><?= $result_blog1['DATE'] ?></small>
                 <div class="m-25">
-                    <?= $result_blog1['CONTEN'] ?>
+                    <p><?= $result_blog1['CONTEN'] ?></p>
                 </div>
 
                 <h5>Komentar</h5>

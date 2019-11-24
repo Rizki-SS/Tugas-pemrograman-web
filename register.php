@@ -2,7 +2,6 @@
 
 include('config/database.php');
 
-session_start();
 if (isset($_SESSION["id"])) {
     header("location:index.php");
 }
@@ -10,15 +9,16 @@ $msg = "";
 if (isset($_POST["register"])) {
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-
-    if (strlen($_POST['password']) >= 8) {
+    $pas = "";
+    if (strlen($_POST['password']) >= 6) {
         if ($_POST['password'] == $_POST['password2']) {
-            $password = md5($_POST['password']);
+            $pas = md5($_POST['password']);
         } else {
             $msg = "password anda salah";
         }
     } else {
-        $msg = "Panjang Charakter Minimal 8";
+        // $msg = "Panjang Charakter Password Minimal 8";
+        // $msg = ($password = md5($_POST['password']));
     }
 
     $chek = "SELECT USER_ID, EMAIL FROM MEMBER WHERE USERNAME = :username OR EMAIL = :email";
@@ -37,14 +37,14 @@ if (isset($_POST["register"])) {
             $db = $Koneksi->prepare($sql);
             $data = array(
                 ":username" => $username,
-                ":password" => $password,
+                ":password" => $pas,
                 ":email"    => $email
             );
             $input = $db->execute($data);
             if ($input) {
                 header("location:login.php");
             } else {
-                echo $input->error;
+                // $msg = mysqli_error($db);
             }
         }
     }
@@ -65,6 +65,22 @@ include('header.php');
                 <form method="POST">
                     <h5>Register</h5>
                     <hr>
+                    <script>
+                        $(document).ready(function() {
+                            $("#msgAlert").slideDown();
+                            $("#msgAlert").delay(3000);
+                            $("#msgAlert").slideUp();
+                        })
+                    </script>
+                    <?php
+                    if (!($msg == "")) {
+                        ?>
+                        <div class="alert alert-success" id="msgAlert" style="display:none;">
+                            <?= $msg ?>
+                        </div>
+                    <?php
+                    }
+                    ?>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -101,9 +117,6 @@ include('header.php');
                         <button type="submit" class="btn btn-primary" name="register">Submit</button>
                         <a class="float-right" href="login.php">You Have Account ?</a>
                     </div>
-                    <?php
-                    echo $msg;
-                    ?>
                 </form>
             </div>
         </div>

@@ -36,7 +36,7 @@ include('header.php')
                         foreach ($result_produk as $key1) {
                             ?>
                             <div class="col-sm-4">
-                                <div class="card">
+                                <div class="card" style="margin-bottom: 2rem;">
                                     <div class="card-body" style="padding-left:0px;padding-right:0px!important">
                                         <h5 class="card-title"><?= $key1["NAMA_PRODUK"] ?></h5>
                                         <h4 class="display-5 bg-info text-white" style="padding :15px">Rp.<?= $key1["BIAYA"] ?></h4>

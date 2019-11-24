@@ -43,6 +43,22 @@ include('header.php');
                 <form method="POST">
                     <h5>Login</h5>
                     <hr>
+                    <script>
+                        $(document).ready(function() {
+                            $("#msgAlert").slideDown();
+                            $("#msgAlert").delay(3000);
+                            $("#msgAlert").slideUp();
+                        })
+                    </script>
+                    <?php
+                    if (!($msg == "")) {
+                        ?>
+                        <div class="alert alert-success" id="msgAlert" style="display:none;">
+                            <?= $msg ?>
+                        </div>
+                    <?php
+                    }
+                    ?>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -68,9 +84,6 @@ include('header.php');
                             <a href="#">Forget Password ?</a>
                         </div>
                     </div>
-                    <?php
-                    echo $msg;
-                    ?>
                 </form>
             </div>
         </div>

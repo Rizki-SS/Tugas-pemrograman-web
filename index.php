@@ -121,60 +121,6 @@ $result_produk = $db1->fetchAll();
         <?php
         }
         ?>
-        <!-- <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body" style="padding-left:0px;padding-right:0px!important">
-                    <h5 class="card-title">Paket Home Net 1</h5>
-                    <h4 class="display-5 bg-info text-white" style="padding :15px">Rp.000000</h4>
-                    <img src="img/speedometer.svg" alt="" srcset="" width="30%">
-                    <h3>5 MB/s</h3>
-                    <br>
-                    <li>Free 1 Wired Router</li>
-                    <li>Free Installasi</li>
-                    <li>Dynamic Ip</li>
-                    <li>Recomended For 5-10 PC/Gadget</li>
-                    <br>
-                    <br>
-                    <a class="btn btn-sm btn-default bg-info rounded-pill" href="#">Install Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body" style="padding-left:0px;padding-right:0px!important">
-                    <h5 class="card-title">Paket Home Net 1</h5>
-                    <h4 class="display-5 bg-info text-white" style="padding :15px">Rp.000000</h4>
-                    <img src="img/speedometer.svg" alt="" srcset="" width="30%">
-                    <h3>5 MB/s</h3>
-                    <br>
-                    <li>Free 1 Wired Router</li>
-                    <li>Free Installasi</li>
-                    <li>Dynamic Ip</li>
-                    <li>Recomended For 5-10 PC/Gadget</li>
-                    <br>
-                    <br>
-                    <a class="btn btn-sm btn-default bg-info rounded-pill" href="#">Install Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body" style="padding-left:0px;padding-right:0px!important">
-                    <h5 class="card-title">Paket Home Net 1</h5>
-                    <h4 class="display-5 bg-info text-white" style="padding :15px">Rp.000000</h4>
-                    <img src="img/speedometer.svg" alt="" srcset="" width="30%">
-                    <h3>5 MB/s</h3>
-                    <br>
-                    <li>Free 1 Wired Router</li>
-                    <li>Free Installasi</li>
-                    <li>Dynamic Ip</li>
-                    <li>Recomended For 5-10 PC/Gadget</li>
-                    <br>
-                    <br>
-                    <a class="btn btn-sm btn-default bg-info rounded-pill" href="#">Install Now</a>
-                </div>
-            </div>
-        </div> -->
         <div class="row w-100">
 
             <button type="button" style="margin :20px auto" class="btn btn-large btn-block btn-default">button</button>
@@ -189,29 +135,29 @@ $result_produk = $db1->fetchAll();
         </div>
     </div>
 </div>
+<?php
+$query = "SELECT*FROM BLOG WHERE STATUS = 0 ORDER BY DATE DESC LIMIT 2";
+$db = $Koneksi->prepare($query);
+$db->execute();
+$result_blog = $db->fetchAll();
+?>
 <div class="container">
     <h2 class="display-6 text-center" style="margin  :50px">Blog</h2>
     <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Lorem</h5>
-                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste earum
-                        consectetur repellat pariatur dolorum deserunt dicta saepe error. Non cupiditate, sit ea
-                        magnam asperiores corrupti veritatis soluta cumque? In, reprehenderit!</p>
+        <?php
+        foreach ($result_blog as $key) {
+            ?>
+            <div class="col-sm-6">
+                <div class="card blog-news">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="/blog.php?id=<?= $key['ID_BLOG'] ?>"><?= $key['TITLE'] ?></a></h5>
+                        <p class="card-text"><small><?= substr($key['CONTEN'], 0, 300) ?>...</small></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Lorem ipsum dolor sit</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, expedita
-                        rem, fuga illum placeat labore enim totam nostrum voluptatibus error cumque tenetur
-                        repellat consequuntur deserunt reprehenderit dolorum, consectetur quis? Dolore?</p>
-                </div>
-            </div>
-        </div>
+        <?php
+        }
+        ?>
     </div>
 </div>
 <div class="container-fluid" style="margin:30px 0px">

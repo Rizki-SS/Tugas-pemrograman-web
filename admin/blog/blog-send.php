@@ -1,6 +1,10 @@
-<?php
 
-include("../config/database.php");
+<?php
+$dir = $_SERVER['DOCUMENT_ROOT'];
+include($dir . "/config/database.php");
+if (!isset($_SESSION["id"])) {
+    header("location:../index.php");
+}
 
 if (!($_POST["id"] == 0)) {
     $query = "UPDATE BLOG SET TITLE=:title,DATE=NOW(),CONTEN=:isi,STATUS=:status WHERE ID_BLOG = :id";
@@ -12,7 +16,7 @@ if (!($_POST["id"] == 0)) {
         ":id" => $_POST["id"]
     );
     if ($db->execute($arry)) {
-        header("location:../admin/blog.php");
+        header("location:/admin/blog");
     }
 } else {
     $query = "INSERT INTO BLOG VALUES (NULL, :title, NOW(), :isi, :status)";
@@ -24,6 +28,6 @@ if (!($_POST["id"] == 0)) {
     );
     $a = $db->execute($arry);
     if ($a) {
-        header("location:blog.php");
+        header("location:/admin/blog");
     }
 }

@@ -3,10 +3,10 @@ session_start();
 ?>
 
 <head>
-    <link rel="stylesheet" href="../bootstrap-4.3.1/css/bootstrap.css">
-    <script src="../bootstrap-4.3.1/js/bootstrap.js"></script>
-    <script src="../bootstrap-4.3.1/jquery-3.4.1.min.js"></script>
-    <script src="../bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap-4.3.1/css/bootstrap.css">
+    <script src="/bootstrap-4.3.1/js/bootstrap.js"></script>
+    <script src="/bootstrap-4.3.1/jquery-3.4.1.min.js"></script>
+    <script src="/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/cd4fbae50a.js"></script>
     <style>
         #cover {
@@ -28,19 +28,36 @@ session_start();
             background-image: url('../img/untitled-2.png');
             background-size: cover;
         }
+
+        .blog-news {
+            height: 12rem;
+
+        }
+
+        .blog-news img {
+            width: 5rem !important;
+            height: 5rem !important;
+            float: left;
+            margin-right: 10px;
+        }
+
+        p {
+            word-break: break-word !important;
+            overflow-wrap: break-word !important;
+        }
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-right shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="../index.php"><img src="../img/Logo.png" width="150px"></a>
+            <a class="navbar-brand" href="/index.php"><img src="/img/Logo.png" width="150px"></a>
             <nav class="nav nav-fill">
                 <li class="nav-item">
-                    <a class="nav-link " href="../product.php">Product</a>
+                    <a class="nav-link " href="/product.php">Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Blog</a>
+                    <a class="nav-link " href="/blog.php">Blog</a>
                 </li>
                 <?php
                 if (!isset($_SESSION["id"])) { ?>
@@ -51,7 +68,7 @@ session_start();
                 } else {
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link " href="../user">User Panel</a>
+                        <a class="nav-link " href="/user">User Panel</a>
                     </li>
                 <?php
                 }

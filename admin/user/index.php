@@ -1,6 +1,7 @@
 <?php
-include("../header.php");
-include("../config/database.php");
+$dir = $_SERVER['DOCUMENT_ROOT'];
+include($dir . "/config/database.php");
+include($dir . "/header.php");
 if (!isset($_SESSION["id"])) {
     header("location:../index.php");
 }
@@ -17,7 +18,7 @@ $result = $db->fetchAll();
         <div class="col-sm-3">
             <br>
             <?php
-            include("sidebar.php");
+            include($dir . "/admin/sidebar.php");
             ?>
         </div>
         <div class="col">
@@ -45,6 +46,7 @@ $result = $db->fetchAll();
                         <th scope="col">Username</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Address</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -57,15 +59,24 @@ $result = $db->fetchAll();
                             <td><?= $key["USERNAME"] ?></td>
                             <td><?= $key["EMAIL"] ?></td>
                             <td><?= $key["ALAMAT"] ?></td>
-                            <td class="w-25">
-                                <div class="row">
-                                    <div class="col">
-                                        <button type="button" class="btn btn-sm btn-block btn-info">button</button>
-                                    </div>
-                                    <div class="col">
-                                        <button type="button" class="btn btn-sm btn-block btn-info">button</button>
-                                    </div>
-                                </div>
+                            <td>
+                                <?php
+                                    if ($key["TIPE_USER"] == 1) {
+                                        echo '<b> Admin </b>';
+                                    } else
+                                    if ($key["TIPE_USER"] == 2) {
+                                        echo 'User';
+                                    } else {
+                                        echo 'BlackList';
+                                    }
+                                    ?>
+
+                            </td>
+                            <td>
+                                <a href="/admin/user/user-edit.php?id=<?= $key["USER_ID"] ?>" type="button" class="btn btn-block btn-info">
+
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
                             </td>
                         </tr>
                     <?php
