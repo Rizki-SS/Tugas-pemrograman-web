@@ -25,7 +25,7 @@ $result_produk = $db1->fetchAll();
 
     <div class="row text-center">
 
-        <div class="col-lg-3">
+        <div class="col-md-3">
             <div class="card border-0">
                 <img src="img/icon 1-Peforma Jaringan Yang Stabil.png" alt="" srcset="" width="50%" style="margin:10px auto">
                 <div class="card-body">
@@ -38,7 +38,7 @@ $result_produk = $db1->fetchAll();
             </div>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-md-3">
             <div class="card border-0">
                 <img src="img/icon 1-Layanan Terbaik.png" alt="" srcset="" width="50%" style="margin:10px auto">
                 <div class="card-body">
@@ -51,7 +51,7 @@ $result_produk = $db1->fetchAll();
             </div>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-md-3">
             <div class="card border-0">
                 <img src="img/icon 1-konten yang menarik.png" alt="" srcset="" width="50%" style="margin:10px auto">
                 <div class="card-body">
@@ -64,7 +64,7 @@ $result_produk = $db1->fetchAll();
             </div>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-md-3">
             <div class="card border-0">
                 <img src="img/icon 1-Terbaik.png" alt="" srcset="" width="50%" style="margin:10px auto">
                 <div class="card-body">
@@ -103,7 +103,7 @@ $result_produk = $db1->fetchAll();
     <div class="row text-center">
         <?php foreach ($result_produk as $key1) {
             ?>
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-body" style="padding-left:0px;padding-right:0px!important">
                         <h5 class="card-title"><?= $key1["NAMA_PRODUK"] ?></h5>
@@ -121,7 +121,7 @@ $result_produk = $db1->fetchAll();
         <?php
         }
         ?>
-        <div class="row w-100">
+        <div class="row">
 
             <button type="button" style="margin :20px auto" class="btn btn-large btn-block btn-default">button</button>
 
@@ -130,7 +130,7 @@ $result_produk = $db1->fetchAll();
 </div>
 <div class="container-fluid" id="contact" style="margin:30px 0px">
     <div class="container" style="padding:20px">
-        <div class="row bg-light rounded w-100 " style="padding:10px ">
+        <div class="row bg-light rounded" style="padding:10px ">
             <h1 class="display-4 text-center m-auto">Contact Us : +666 666 777</h1>
         </div>
     </div>
@@ -150,8 +150,10 @@ $result_blog = $db->fetchAll();
             <div class="col-sm-6">
                 <div class="card blog-news">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="/blog.php?id=<?= $key['ID_BLOG'] ?>"><?= $key['TITLE'] ?></a></h5>
-                        <p class="card-text"><small><?= substr($key['CONTEN'], 0, 300) ?>...</small></p>
+                        <h5 class="card-title">
+                            <a href="/blog.php?id=<?= $key['ID_BLOG'] ?>"><?= $key['TITLE'] ?></a>
+                        </h5>
+                        <p><?= substr($key['CONTEN'], 0, 300) ?>...</p>
                     </div>
                 </div>
             </div>

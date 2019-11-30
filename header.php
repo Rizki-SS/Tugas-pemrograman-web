@@ -41,6 +41,7 @@ session_start();
             margin-right: 10px;
         }
 
+
         p {
             word-break: break-word !important;
             overflow-wrap: break-word !important;
@@ -49,7 +50,7 @@ session_start();
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-right shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-right shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="/index.php"><img src="/img/Logo.png" width="150px"></a>
             <nav class="nav nav-fill">

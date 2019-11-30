@@ -46,7 +46,7 @@ include('header.php')
                                         <?= $key1["KET"] ?>
                                         <br>
                                         <br>
-                                        <a class="btn btn-sm btn-default bg-info rounded-pill" href="#">Install Now</a>
+                                        <a class="btn btn-sm btn-default bg-info rounded-pill" href="../order/index.php?idproduk=<?= $key1["ID_PRODUK"] ?>">Install Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@ include('header.php')
                                                 <?= $key1["KET"] ?>
                                                 <br>
                                                 <br>
-                                                <a class="btn btn-sm btn-default bg-info rounded-pill" href="#">Install Now</a>
+                                                <a class="btn btn-sm btn-default bg-info rounded-pill" href="../order/index.php?idproduk=<?= $key1["ID_PRODUK"] ?>">Install Now</a>
                                             </div>
                                         </div>
                                     </div>

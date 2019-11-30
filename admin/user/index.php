@@ -26,7 +26,6 @@ $result = $db->fetchAll();
             <div class="row">
                 <div class="col">
                     <h4>User</h4>
-                    <form method="POST" action="">
                 </div>
                 <div class="col">
                     <form method="POST" action="">
