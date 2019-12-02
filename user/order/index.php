@@ -15,7 +15,7 @@ if (isset($_GET["search"])) {
     $db->execute($data);
     $result = $db->fetchAll();
 } else {
-    $query = "SELECT*FROM ORDER_ADMIN";
+    $query = "SELECT*FROM ORDER_ADMIN WHERE USER_ID = $_SESSION[id]";
     $db = $Koneksi->prepare($query);
     $db->execute();
     $result = $db->fetchAll();
@@ -28,7 +28,7 @@ if (isset($_GET["search"])) {
         <div class="col-sm-3">
             <br>
             <?php
-            include($dir . "/admin/sidebar.php");
+            include($dir . "/user/sidebar.php");
             ?>
         </div>
         <div class="col">
@@ -53,7 +53,6 @@ if (isset($_GET["search"])) {
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">id Member</th>
                         <th scope="col">Nama Produk</th>
                         <th scope="col">Biaya Bulanan</th>
                         <th scope="col">Jangka Waktu</th>
@@ -67,7 +66,6 @@ if (isset($_GET["search"])) {
                         ?>
                         <tr>
                             <th scope="row"><?= $key["KODE_PESANAN"] ?></th>
-                            <td><?= $key["USER_ID"] ?></td>
                             <td><?= $key["NAMA_PRODUK"] ?></td>
                             <td><?= $key["BIAYA"] ?></td>
                             <td>
@@ -75,6 +73,7 @@ if (isset($_GET["search"])) {
                             </td>
                             <td>
                                 <?php
+                                    $status = false;
                                     if ($key["STATUS"] == "1") {
                                         if ($key["TANGGAL"] != null) {
                                             $add = '+' . $key["masa_waktu"] . ' month';
@@ -85,6 +84,7 @@ if (isset($_GET["search"])) {
                                                 $timeleft = $dateend->diff($datenow);
                                                 echo $timeleft->format("%a days left");
                                                 echo "<small><br>Until : " . $dateend->format("d - M - Y") . "</small>";
+                                                $status = true;
                                             } else {
                                                 echo "Belum Membayar/Terkonfirmasi";
                                             }
@@ -98,13 +98,21 @@ if (isset($_GET["search"])) {
                             </td>
                             <td>
                                 <div class="row">
-                                    <!-- <a style="margin: 5px;" href="/admin/order/view-detail.php?id_post=<?= $key["KODE_PESANAN"] ?>" type="button" class="btn btn-warning">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-
-                                    </a> -->
-                                    <a style="margin: 5px;" href="/admin/order/edit.php?id_post=<?= $key["KODE_PESANAN"] ?>" type="button" class="btn btn-info">
-                                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                                    </a>
+                                    <?php
+                                        if ($status) {
+                                            ?>
+                                        <button style="margin: 5px;" disabled href="/admin/pembayaran/upload.php?id_post=<?= $key["KODE_PESANAN"] ?>" type="button" class="btn btn-info">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </button>
+                                    <?php
+                                        } else {
+                                            ?>
+                                        <a style="margin: 5px;" href="/user/pembayaran/upload.php?id_post=<?= $key["KODE_PESANAN"] ?>" type="button" class="btn btn-info">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a>
+                                    <?php
+                                        }
+                                        ?>
                                 </div>
                             </td>
                         </tr>
