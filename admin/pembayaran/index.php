@@ -69,7 +69,7 @@ if (isset($_GET["search"])) {
                             <th scope="row"><?= $key["ID_PEMBAYARAN"] ?></th>
                             <td><?= $key["KODE_PEMESANAN"] ?></td>
                             <td><?= $key["TANGGAL"] ?></td>
-                            <td><a href="<?= $key["BUKTI"] ?>">lihat</a></td>
+                            <td><a href="<?= $key["BUKTI"] ?>" target="blank">lihat</a></td>
                             <td>
                                 <?php
                                     if ($key["STATUS"] == "1") {
@@ -81,9 +81,21 @@ if (isset($_GET["search"])) {
                             </td>
                             <td><?= $key["JUMLAH"] ?></td>
                             <td>
-                                <button style="margin: 5px;" data-id="<?= $key["ID_PEMBAYARAN"] ?>" type="button" class="btn btn-info konfirm" data-toggle="modal" data-target="#exampleModal">
-                                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                </button>
+                                <?php
+                                    if ($key["STATUS"] == 1) {
+                                        ?>
+                                    <button disabled style="margin: 5px;" data-id="<?= $key["ID_PEMBAYARAN"] ?>" type="button" class="btn btn-info konfirm" data-toggle="modal" data-target="#exampleModal">
+                                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                    </button>
+                                <?php
+                                    } else {
+                                        ?>
+                                    <button style="margin: 5px;" data-id="<?= $key["ID_PEMBAYARAN"] ?>" type="button" class="btn btn-info konfirm" data-toggle="modal" data-target="#exampleModal">
+                                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                    </button>
+                                <?php
+                                    }
+                                    ?>
                             </td>
                         </tr>
                     <?php

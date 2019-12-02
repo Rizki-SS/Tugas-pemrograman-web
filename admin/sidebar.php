@@ -20,4 +20,6 @@
                         Blog</a></li>
         <li class="list-group-item"><i class="fa fa-cog" aria-hidden="true"></i>
                 Setting</li>
+        <li class="list-group-item"><a href="/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                        Logout</a></li>
 </ul>

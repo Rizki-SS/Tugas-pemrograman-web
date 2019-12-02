@@ -4,15 +4,26 @@ include($dir . "/config/database.php");
 include($dir . "/header.php");
 if (!isset($_SESSION["id"])) {
     header("location:../index.php");
-}
+};
 
-$query = "SELECT ID_PEMBAYARAN, KODE_PEMESANAN, TANGGAL, BUKTI, PEMBAYARAN.STATUS, TANGGAL_UPLOAD, JUMLAH FROM PEMBAYARAN JOIN PESANAN ON KODE_PESANAN = KODE_PEMESANAN WHERE USER_ID = :cari";
-$db = $Koneksi->prepare($query);
-$data = array(
-    ":cari" => $_SESSION["id"]
-);
-$db->execute($data);
-$result = $db->fetchAll();
+if (isset($_GET["search"])) {
+    $query = "SELECT ID_PEMBAYARAN, KODE_PEMESANAN, TANGGAL, BUKTI, PEMBAYARAN.STATUS, TANGGAL_UPLOAD, JUMLAH FROM PEMBAYARAN JOIN PESANAN ON KODE_PESANAN = KODE_PEMESANAN WHERE USER_ID = :id AND KODE_PEMESANAN = :cari";
+    $db = $Koneksi->prepare($query);
+    $data = array(
+        ":cari" => $_GET["search"],
+        ":id" => $_SESSION["id"]
+    );
+    $db->execute($data);
+    $result = $db->fetchAll();
+} else {
+    $query = "SELECT ID_PEMBAYARAN, KODE_PEMESANAN, TANGGAL, BUKTI, PEMBAYARAN.STATUS, TANGGAL_UPLOAD, JUMLAH FROM PEMBAYARAN JOIN PESANAN ON KODE_PESANAN = KODE_PEMESANAN WHERE USER_ID = :cari";
+    $db = $Koneksi->prepare($query);
+    $data = array(
+        ":cari" => $_SESSION["id"]
+    );
+    $db->execute($data);
+    $result = $db->fetchAll();
+}
 ?>
 
 <div class="container">
@@ -28,12 +39,12 @@ $result = $db->fetchAll();
             <br>
             <div class="row">
                 <div class="col">
-                    <h4>Order-List</h4>
+                    <h4>Histori Pembayaran</h4>
                 </div>
                 <div class="col">
-                    <form action="index.php" method="GET">
+                    <form action="" method="GET">
                         <div class="input-group">
-                            <input class="form-control" type="text" name="search" placeholder="Search Servis Id" aria-label="Recipient's " aria-describedby="my-addon">
+                            <input class="form-control" type="text" name="search" placeholder="Search Kode Pemesanan" aria-label="Recipient's " aria-describedby="my-addon">
                             <div class="input-group-append">
                                 <button type="submit" class="input-group-text btn btn-large btn-block btn-default bg-light"><i class="fa fa-search" aria-hidden="true"></i>
                                 </button>

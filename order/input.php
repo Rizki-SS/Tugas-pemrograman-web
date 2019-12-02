@@ -27,6 +27,7 @@ $arr = array(
 );
 if ($db->execute($arr)) {
     echo "a";
+    header("location:/user");
 } else {
     print_r($db->errorInfo());
 }

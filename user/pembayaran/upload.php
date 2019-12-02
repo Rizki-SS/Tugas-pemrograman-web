@@ -30,7 +30,7 @@ if (isset($_GET["id_post"])) {
         </div>
         <div class="col">
             <div class="col">
-                <h4>Order Id : <?= $_GET["id_post"] ?></h4>
+                <h4>Pembayaran - Order Id : <?= $_GET["id_post"] ?></h4>
             </div>
 
             <hr>

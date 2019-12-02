@@ -98,6 +98,9 @@ if (isset($_GET["search"])) {
                             </td>
                             <td>
                                 <div class="row">
+                                    <a style="margin: 5px;" href="/user/order/view.php?id_post=<?= $key["KODE_PESANAN"] ?>" type="button" class="btn btn-warning">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                    </a>
                                     <?php
                                         if ($status) {
                                             ?>
