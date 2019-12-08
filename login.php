@@ -21,8 +21,13 @@ if (isset($_POST["login"])) {
 
     if ($login["USER_ID"] > 0) {
         $_SESSION["id"] = $login["USER_ID"];
-        $_SESSION["user"]   = $login["USERNAME"];
-        header("location: ../user/index.php");
+        $_SESSION["user"] = $login["USERNAME"];
+        $_SESSION["tipe"] = $login["TIPE_USER"];
+        if ($_SESSION["tipe"] != 1) {
+            header("location: ../user/index.php");
+        } else {
+            header("location: ../admin/index.php");
+        }
     } else {
         $msg = "Username/Password Salah";
     }
@@ -80,8 +85,6 @@ include('header.php');
                         <div class="float-right text-right">
                             <br>
                             <a href="register.php">Not Have Account ?</a>
-                            OR
-                            <a href="#">Forget Password ?</a>
                         </div>
                     </div>
                 </form>

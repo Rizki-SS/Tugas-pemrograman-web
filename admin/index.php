@@ -3,6 +3,8 @@ include("../header.php");
 if (!isset($_SESSION["id"])) {
     header("location:../index.php");
 }
+header("location:/admin/user")
+
 ?>
 
 <div class="container">

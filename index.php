@@ -1,7 +1,6 @@
 <?php
 include('header.php');
 include("config/database.php");
-session_start();
 
 $queri = "SELECT * FROM PRODUK WHERE RECOMENDED=1";
 $db1 = $Koneksi->prepare($queri);
@@ -96,44 +95,43 @@ $result_produk = $db1->fetchAll();
         <a class="btn btn-sm btn-default bg-light rounded-pill" href="#">Lebih Lanjut</a>
     </div>
 </div>
+
 <div class="container">
 
-    <h2 class="display-6 text-center" style="margin  :50px">Recomended Product</h2>
+    <h2 class="display-6 text-center" style="margin  : 50px 0px 20px">Recomended Product</h2>
 
     <div class="row text-center">
         <?php foreach ($result_produk as $key1) {
             ?>
-            <div class="col-md-4">
+            <div class="col-md-4" style="margin:10px 0px;">
                 <div class="card">
                     <div class="card-body" style="padding-left:0px;padding-right:0px!important">
                         <h5 class="card-title"><?= $key1["NAMA_PRODUK"] ?></h5>
-                        <h4 class="display-5 bg-info text-white" style="padding :15px">Rp.<?= $key1["BIAYA"] ?></h4>
+                        <h4 class="display-5 bg-primary text-white" style="padding :15px">Rp.<?= $key1["BIAYA"] ?></h4>
                         <img src="img/speedometer.svg" alt="" srcset="" width="30%">
                         <h3><?= $key1["SPEED"] ?></h3>
                         <br>
                         <?= $key1["KET"] ?>
                         <br>
                         <br>
-                        <a class="btn btn-sm btn-default bg-info rounded-pill" href="#">Install Now</a>
+                        <a class="btn btn-sm btn-default bg-primary rounded-pill text-white" href="#">Install Now</a>
                     </div>
                 </div>
             </div>
         <?php
         }
         ?>
-        <div class="row">
-
-            <button type="button" style="margin :20px auto" class="btn btn-large btn-block btn-default">button</button>
-
+        <div class="row w-100">
+            <a href="/product.php" type="button" style="margin :20px;" class="btn btn-small bg-primary rounded-pill text-white">See More</a>
         </div>
     </div>
 </div>
 <div class="container-fluid" id="contact" style="margin:30px 0px">
     <div class="container" style="padding:20px">
         <div class="row bg-light rounded" style="padding:10px ">
-            <h1 class="display-4 text-center m-auto">Contact Us : +666 666 777</h1>
+            <h3 class="text-center m-auto">Contact Us : +666 666 777</h3>
         </div>
-    </div>
+    </div style="font-family : sans-serif">
 </div>
 <?php
 $query = "SELECT*FROM BLOG WHERE STATUS = 0 ORDER BY DATE DESC LIMIT 2";
@@ -153,7 +151,7 @@ $result_blog = $db->fetchAll();
                         <h5 class="card-title">
                             <a href="/blog.php?id=<?= $key['ID_BLOG'] ?>"><?= $key['TITLE'] ?></a>
                         </h5>
-                        <p><?= substr($key['CONTEN'], 0, 300) ?>...</p>
+                        <p><?= substr($key['CONTEN'], 0, 300) ?>...</p></em>
                     </div>
                 </div>
             </div>
@@ -175,7 +173,7 @@ $result_blog = $db->fetchAll();
                 </div>
 
             </div>
-            <div class="col-sm-6">
+            <!-- <div class="col-sm-6">
                 <form method="post">
                     <div class="input-group">
                         <input class="form-control" type="text" name="" placeholder="Subcribe to get more promo" aria-label="Recipient's " aria-describedby="my-addon">
@@ -184,7 +182,7 @@ $result_blog = $db->fetchAll();
                         </div>
                     </div>
                 </form>
-            </div>
+            </div> -->
         </div>
     </div>
     <hr>
@@ -196,7 +194,7 @@ $result_blog = $db->fetchAll();
         </div>
         <div class="col-sm-6">
             <div class="row">
-                <blockquote class="blockquote">
+                <blockquote class="blockquote" style="margin: 10px;">
                     <p class="mb-0">About :</p>
                     <footer class="blockquote-footer">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Incidunt ea dolore, minus laborum, laboriosam sit provident deleniti cumque, aut tempora
@@ -207,7 +205,7 @@ $result_blog = $db->fetchAll();
             </div>
             <div class="row">
                 <div class="col">
-                    <p class="mb-0">Active Link</p>
+                    <p class="mb-0 text"><b>Active Link</b></p>
                     <ul class="list-unstyled">
                         <li><a href="#">Contact</a></li>
                         <li><a href="product.php">Produk</a></li>
@@ -215,7 +213,7 @@ $result_blog = $db->fetchAll();
                     </ul>
                 </div>
                 <div class="col">
-                    <p class="mb-0">Contact :</p>
+                    <p class="mb-0 text"><b>Contact info :</b></p>
                     <ul class="list-unstyled">
                         <li>Phone : </li>
                         <li>Email : </li>

@@ -4,49 +4,12 @@ session_start();
 
 <head>
     <link rel="stylesheet" href="/bootstrap-4.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="/config/style.css">
     <script src="/bootstrap-4.3.1/js/bootstrap.js"></script>
     <script src="/bootstrap-4.3.1/jquery-3.4.1.min.js"></script>
     <script src="/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/cd4fbae50a.js"></script>
-    <style>
-        #cover {
-            background-image: url('../img/Untitled-1.png');
-            background-size: cover;
-            background-attachment: fixed;
-        }
 
-        .conten {
-            padding: 20px;
-        }
-
-        #tex {
-            background-image: url('../img/BG2.png');
-            background-size: cover;
-        }
-
-        #contact {
-            background-image: url('../img/untitled-2.png');
-            background-size: cover;
-        }
-
-        .blog-news {
-            height: 12rem;
-
-        }
-
-        .blog-news img {
-            width: 5rem !important;
-            height: 5rem !important;
-            float: left;
-            margin-right: 10px;
-        }
-
-
-        p {
-            word-break: break-word !important;
-            overflow-wrap: break-word !important;
-        }
-    </style>
 </head>
 
 <body>
@@ -68,9 +31,21 @@ session_start();
                 <?php
                 } else {
                     ?>
-                    <li class="nav-item">
-                        <a class="nav-link " href="/user">User Panel</a>
-                    </li>
+                    <?php
+                        if ($_SESSION["id"] == 1) {
+                            ?>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/admin">Admin Panel</a>
+                        </li>
+                    <?php
+                        } else {
+                            ?>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/user">User Panel</a>
+                        </li>
+                    <?php
+                        }
+                        ?>
                 <?php
                 }
                 ?>

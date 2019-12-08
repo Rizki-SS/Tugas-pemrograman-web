@@ -3,8 +3,6 @@ include('header.php');
 include('config/database.php');
 
 $msg = "";
-
-
 //get Post All
 $query = "SELECT*FROM BLOG WHERE STATUS = 0 ORDER BY DATE DESC LIMIT 8";
 $db = $Koneksi->prepare($query);
@@ -20,10 +18,11 @@ $result_blog = $db->fetchAll();
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 " style="padding: 10px">
 
             <?php
-            if (!isset($_GET['id'])) {
+            if (!isset($_GET['id']) && !isset($_GET['search'])) {
+
                 foreach ($result_blog as $key) {
                     ?>
-                    <div class="row shadow-sm" style="margin:0px 10px 20px; padding: 10px;">
+                    <div class="row shadow rounded-lg" style="margin:0px 10px 20px; padding: 10px;">
                         <div class="col">
                             <h2><?= $key['TITLE'] ?></h2>
                             <hr>
@@ -33,7 +32,34 @@ $result_blog = $db->fetchAll();
 
                             </p>
                             <div class="float-right">
-                                <a href="../blog.php?id=<?= $key['ID_BLOG'] ?>" type="button" class="btn btn-large btn-block btn-default">button</a>
+                                <a href="../blog.php?id=<?= $key['ID_BLOG'] ?>" type="button" class="btn btn-large btn-block btn-primary rounded-pill">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php
+                    }
+                } else if (isset($_GET['search'])) {
+                    $search = '%' . $_GET['search'] . '%';
+                    $query = "SELECT*FROM BLOG WHERE TITLE LIKE :search ORDER BY DATE DESC LIMIT 8";
+                    $db = $Koneksi->prepare($query);
+                    $data = array(":search" => $search);
+                    $db->execute($data);
+                    $result_blog_search = $db->fetchAll();
+
+                    foreach ($result_blog_search as $key) {
+                        ?>
+                    <div class="row shadow rounded-lg" style="margin:0px 10px 20px; padding: 10px;">
+                        <div class="col">
+                            <h2><?= $key['TITLE'] ?></h2>
+                            <hr>
+                            <small><?= $key['DATE'] ?></small>
+                            <p class="m-25">
+                                <?= substr($key['CONTEN'], 0, 300) ?>...
+
+                            </p>
+                            <div class="float-right">
+                                <a href="../blog.php?id=<?= $key['ID_BLOG'] ?>" type="button" class="btn btn-large btn-block btn-primary rounded-pill">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -61,7 +87,7 @@ $result_blog = $db->fetchAll();
                 <div class="m-25">
                     <p><?= $result_blog1['CONTEN'] ?></p>
                 </div>
-
+                <hr>
                 <h5>Komentar</h5>
                 <br>
 
@@ -105,21 +131,35 @@ $result_blog = $db->fetchAll();
             ?>
 
         </div>
+        </em>
 
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 vh-100">
-            <h4>Sidebar</h4>
-            <hr>
-            <ul class="list-unstyled">
+            <div class="row">
+                <div class="col">
+                    <h4>Search</h4>
+                    <hr>
+                    <form method="get">
+                        <input id="my-input" class="form-control" type="text" name="search">
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Newest Artikel</h4>
+                    <hr>
+                    <ul class="list-group list-group-flush">
 
-                <?php
-                foreach ($result_blog as $key) {
-                    ?>
-                    <li class="list-group-item w100"><?= $key["TITLE"] ?></li>
-                <?php
-                }
-                ?>
+                        <?php
+                        foreach ($result_blog as $key) {
+                            ?>
+                            <li class="list-group-item w100" style="margin-left: 20px;"><a href="../blog.php?id=<?= $key['ID_BLOG'] ?>"><?= $key["TITLE"] ?></a></li>
+                        <?php
+                        }
+                        ?>
 
-            </ul>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 

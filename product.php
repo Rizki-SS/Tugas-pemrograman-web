@@ -39,14 +39,14 @@ include('header.php')
                                 <div class="card" style="margin-bottom: 2rem;">
                                     <div class="card-body" style="padding-left:0px;padding-right:0px!important">
                                         <h5 class="card-title"><?= $key1["NAMA_PRODUK"] ?></h5>
-                                        <h4 class="display-5 bg-info text-white" style="padding :15px">Rp.<?= $key1["BIAYA"] ?></h4>
+                                        <h4 class="display-5 bg-primary text-white" style="padding :15px">Rp.<?= $key1["BIAYA"] ?></h4>
                                         <img src="img/speedometer.svg" alt="" srcset="" width="30%">
                                         <h3><?= $key1["SPEED"] ?></h3>
                                         <br>
                                         <?= $key1["KET"] ?>
                                         <br>
                                         <br>
-                                        <a class="btn btn-sm btn-default bg-info rounded-pill" href="../order/index.php?idproduk=<?= $key1["ID_PRODUK"] ?>">Install Now</a>
+                                        <a class="btn btn-sm btn-default bg-primary rounded-pill text-white" href="../order/index.php?idproduk=<?= $key1["ID_PRODUK"] ?>">Install Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -69,14 +69,14 @@ include('header.php')
                                         <div class="card">
                                             <div class="card-body" style="padding-left:0px;padding-right:0px!important">
                                                 <h5 class="card-title"><?= $key1["NAMA_PRODUK"] ?></h5>
-                                                <h4 class="display-5 bg-info text-white" style="padding :15px">Rp.<?= $key1["BIAYA"] ?></h4>
+                                                <h4 class="display-5 bg-primary text-white" style="padding :15px">Rp.<?= $key1["BIAYA"] ?></h4>
                                                 <img src="img/speedometer.svg" alt="" srcset="" width="30%">
                                                 <h3><?= $key1["SPEED"] ?></h3>
                                                 <br>
                                                 <?= $key1["KET"] ?>
                                                 <br>
                                                 <br>
-                                                <a class="btn btn-sm btn-default bg-info rounded-pill" href="../order/index.php?idproduk=<?= $key1["ID_PRODUK"] ?>">Install Now</a>
+                                                <a class="btn btn-sm btn-default bg-primary rounded-pill text-white" href="../order/index.php?idproduk=<?= $key1["ID_PRODUK"] ?>">Install Now</a>
                                             </div>
                                         </div>
                                     </div>

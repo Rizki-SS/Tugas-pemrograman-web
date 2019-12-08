@@ -6,12 +6,9 @@ if (!isset($_SESSION["id"])) {
     header("location:../index.php");
 }
 
-$query = "SELECT*FROM HELPDESK WHERE ID_MEMBER = :id";
+$query = "SELECT*FROM HELPDESK";
 $db = $Koneksi->prepare($query);
-$data = array(
-    ":id" => $_SESSION["id"]
-);
-$db->execute($data);
+$db->execute();
 $result = $db->fetchAll();
 ?>
 
