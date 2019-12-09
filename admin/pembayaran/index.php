@@ -15,7 +15,7 @@ if (isset($_GET["search"])) {
     $db->execute($data);
     $result = $db->fetchAll();
 } else {
-    $query = "SELECT*FROM PEMBAYARAN";
+    $query = "SELECT*FROM PEMBAYARAN ORDER BY ID_PEMBAYARAN DESC";
     $db = $Koneksi->prepare($query);
     $db->execute();
     $result = $db->fetchAll();
@@ -49,6 +49,22 @@ if (isset($_GET["search"])) {
                     </form>
                 </div>
             </div>
+            <?php
+            $msg = $_GET["msg"];
+            if (!empty($msg)) {
+                ?> <div class="alert alert-success" id="msgAlert" style="display:none;">
+                    <?= $msg ?>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        $("#msgAlert").slideDown();
+                        $("#msgAlert").delay(3000);
+                        $("#msgAlert").slideUp();
+                    });
+                </script>
+            <?php
+            }
+            ?>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -134,9 +150,6 @@ if (isset($_GET["search"])) {
 </body>
 <script>
     $(document).ready(function() {
-        $("#msgAlert").slideDown();
-        $("#msgAlert").delay(3000);
-        $("#msgAlert").slideUp();
         $('.konfirm').click(function() {
             var ID = $(this).data('id');
             $("#id").val(ID);

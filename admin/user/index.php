@@ -27,17 +27,23 @@ $result = $db->fetchAll();
                 <div class="col">
                     <h4>User</h4>
                 </div>
-                <div class="col">
-                    <form method="POST" action="">
-                        <div class="input-group">
-                            <input class="form-control" type="text" name="" placeholder="Recipient's text" aria-label="Recipient's " aria-describedby="my-addon">
-                            <div class="input-group-append">
-                                <button type="button" class="input-group-text btn btn-large btn-block btn-default bg-light">button</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
+            <?php
+            $msg = $_GET["msg"];
+            if (!empty($msg)) {
+                ?> <div class="alert alert-success" id="msgAlert" style="display:none;">
+                    <?= $msg ?>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        $("#msgAlert").slideDown();
+                        $("#msgAlert").delay(3000);
+                        $("#msgAlert").slideUp();
+                    });
+                </script>
+            <?php
+            }
+            ?>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -88,5 +94,6 @@ $result = $db->fetchAll();
     </div>
 </div>
 </body>
+
 
 </html>

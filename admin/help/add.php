@@ -11,7 +11,7 @@ $data = array(
     ":status" => 1
 );
 if ($db->execute($data)) {
-    header("location:index.php");
+    header("location:index.php?msg=Update data berhasil");
 } else {
     print_r($db->errorInfo());
 }

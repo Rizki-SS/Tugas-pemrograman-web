@@ -12,7 +12,7 @@ $arry = array(
     ":status" => $_POST["status"]
 );
 if ($db->execute($arry)) {
-    header("location:../user");
+    header("location:../user/index.php?msg=Update Sukses");
 } else {
     echo 'asdsad';
 }

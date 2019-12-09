@@ -49,6 +49,22 @@ if (isset($_GET["search"])) {
                     </form>
                 </div>
             </div>
+            <?php
+            $msg = $_GET["msg"];
+            if (!empty($msg)) {
+                ?> <div class="alert alert-success" id="msgAlert" style="display:none;">
+                    <?= $msg ?>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        $("#msgAlert").slideDown();
+                        $("#msgAlert").delay(3000);
+                        $("#msgAlert").slideUp();
+                    });
+                </script>
+            <?php
+            }
+            ?>
             <table class="table table-striped">
                 <thead>
                     <tr>

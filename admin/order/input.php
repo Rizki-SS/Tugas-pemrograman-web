@@ -24,7 +24,7 @@ $arr = array(
     ":total" => $_POST["total"]
 );
 if ($db->execute($arr)) {
-    header("location:index.php");
+    header("location:index.php?msg=Update data berhasil");
 } else {
     print_r($db->errorInfo());
 }

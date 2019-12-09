@@ -13,7 +13,7 @@ $data = array(
     ":status" => 0
 );
 if ($db->execute($data)) {
-    header("location:index.php");
+    header("location:index.php?msg=bantuan telah terkirim, silahkan tunggu untuk mendapatkan balasan");
 } else {
     print_r($db->errorInfo());
 }

@@ -55,7 +55,7 @@ $result_blog = $db->fetchAll();
                             <hr>
                             <small><?= $key['DATE'] ?></small>
                             <p class="m-25">
-                                <?= substr($key['CONTEN'], 0, 300) ?>...
+                                <?= substr($key['CONTEN'], 0, 500) ?>...
 
                             </p>
                             <div class="float-right">

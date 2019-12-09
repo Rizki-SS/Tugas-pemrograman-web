@@ -17,11 +17,27 @@ $result = $db->fetch(PDO::FETCH_ASSOC);
         <div class="col-sm-3">
             <br>
             <?php
-            include($dir . "/user/sidebar.php");
+            include($dir . "/admin/sidebar.php");
             ?>
         </div>
 
         <div class="col">
+            <?php
+            $msg = $_GET["msg"];
+            if (!empty($msg)) {
+                ?> <div class="alert alert-success" id="msgAlert" style="display:none;">
+                    <?= $msg ?>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        $("#msgAlert").slideDown();
+                        $("#msgAlert").delay(3000);
+                        $("#msgAlert").slideUp();
+                    });
+                </script>
+            <?php
+            }
+            ?>
             <br>
             <h5>Settign - Account</h5>
             <hr>

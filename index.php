@@ -29,10 +29,7 @@ $result_produk = $db1->fetchAll();
                 <img src="img/icon 1-Peforma Jaringan Yang Stabil.png" alt="" srcset="" width="50%" style="margin:10px auto">
                 <div class="card-body">
                     <h5 class="card-title">Jaringan Yang Stabi</h5>
-                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus
-                        voluptatum sequi accusamus animi minima molestiae, itaque a atque maiores qui rerum
-                        sed,
-                        eveniet culpa, est illo quos ipsum. Veritatis, sed.</p>
+                    <p class="card-text">menyediakan layanan jaringan telekomunikasi dan multimedia yang lengkap untuk memenuhi kebutuhan pelanggan bisnis dan konsumen dengan harga yang terjangkau.</p>
                 </div>
             </div>
         </div>
@@ -42,10 +39,7 @@ $result_produk = $db1->fetchAll();
                 <img src="img/icon 1-Layanan Terbaik.png" alt="" srcset="" width="50%" style="margin:10px auto">
                 <div class="card-body">
                     <h5 class="card-title">Layanan Terbaik</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae nemo
-                        mollitia harum repellendus libero? Aliquid nesciunt, ratione excepturi architecto
-                        similique
-                        amet quis nemo quae dicta saepe ex ullam molestias quos!</p>
+                    <p class="card-text">Customer Care dan Network Operation Center selalu tersedia 24 x 7 x 365, Anda dapat menghubungi kami melalui telepon, email atau live chat.</p>
                 </div>
             </div>
         </div>
@@ -55,10 +49,7 @@ $result_produk = $db1->fetchAll();
                 <img src="img/icon 1-konten yang menarik.png" alt="" srcset="" width="50%" style="margin:10px auto">
                 <div class="card-body">
                     <h5 class="card-title">Konten Yang Menarik</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit ea
-                        beatae
-                        quae ullam, possimus, maxime, temporibus enim iusto velit in aperiam! Voluptatum optio
-                        accusantium exercitationem rerum placeat porro quod dignissimos!</p>
+                    <p class="card-text">terkoneksi secara langsung ke beberapa Provider Tier-1 dan Internet Exchange terkemuka di dunia, sehingga memiliki rute yang singkat ke jaringan yang dituju. </p>
                 </div>
             </div>
         </div>
@@ -68,9 +59,7 @@ $result_produk = $db1->fetchAll();
                 <img src="img/icon 1-Terbaik.png" alt="" srcset="" width="50%" style="margin:10px auto">
                 <div class="card-body">
                     <h5 class="card-title">Teknisi Terbaik</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-                        repellendus et quos facilis dolor voluptatem nostrum voluptates! Repellat ad in esse
-                        similique, inventore alias, quam quod quia dolorem, autem aliquid.</p>
+                    <p class="card-text">Tim Teknisi terbaik, yang sebagian besar merupakan memiliki sertifikat keahlian yang terpercaya dan berpengalaman</p>
                 </div>
             </div>
         </div>
@@ -81,18 +70,11 @@ $result_produk = $db1->fetchAll();
         <h2 class="display-6 text-center">We Are Technologi</h2>
         <h4 class="text-center">#Fiber-Optic</h4>
         <br>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt minima ab consequuntur eligendi,
-            rerum ex exercitationem pariatur earum quis asperiores aut tempore consectetur accusamus
-            praesentium
-            laudantium nesciunt quam molestias? Expedita! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit.
-            Magnam debitis tenetur nisi. Sapiente commodi officiis nostrum, odit temporibus voluptate eligendi
-            consequatur ipsum placeat maiores enim similique, sunt laudantium ullam animi!</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt minima ab consequuntur eligendi,
-            rerum ex exercitationem pariatur earum quis asperiores aut tempore consectetur accusamus
-            praesentium
-            laudantium nesciunt quam molestias? Expedita!</p>
-        <a class="btn btn-sm btn-default bg-light rounded-pill" href="#">Lebih Lanjut</a>
+        <p>Serat optik adalah saluran transmisi atau sejenis kabel yang terbuat dari kaca atau plastik yang sangat halus dan lebih kecil dari sehelai rambut, dan dapat digunakan untuk mentransmisikan sinyal cahaya dari suatu tempat ke tempat lain. Sumber cahaya yang digunakan biasanya adalah laser atau LED[1]. Kabel ini berdiameter kurang lebih 120 mikrometer.
+        </p>
+        <p>
+            Cahaya yang ada di dalam serat optik tidak keluar karena indeks bias dari kaca lebih besar daripada indeks bias dari udara, karena laser mempunyai spektrum yang sangat sempit. Kecepatan transmisi serat optik sangat tinggi sehingga sangat bagus digunakan sebagai saluran komunikasi. </p>
+        <a class="btn btn-sm btn-default bg-light rounded-pill" href="/blog.php?id=9">Lebih Lanjut</a>
     </div>
 </div>
 
@@ -146,7 +128,7 @@ $result_blog = $db->fetchAll();
         foreach ($result_blog as $key) {
             ?>
             <div class="col-sm-6">
-                <div class="card blog-news">
+                <div class="card blog-news" style="font-size: 14px !important">
                     <div class="card-body">
                         <h5 class="card-title">
                             <a href="/blog.php?id=<?= $key['ID_BLOG'] ?>"><?= $key['TITLE'] ?></a>
@@ -206,7 +188,7 @@ $result_blog = $db->fetchAll();
                     <ul class="list-unstyled">
                         <li><a href="/blog.php">Blog</a></li>
                         <li><a href="product.php">Produk</a></li>
-                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="blog.php?id=2">Syarat & Ketentuan</a></li>
                     </ul>
                 </div>
                 <div class="col">

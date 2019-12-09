@@ -22,6 +22,22 @@ $result = $db->fetch(PDO::FETCH_ASSOC);
         </div>
 
         <div class="col">
+            <?php
+            $msg = $_GET["msg"];
+            if (!empty($msg)) {
+                ?> <div class="alert alert-success" id="msgAlert" style="display:none;">
+                    <?= $msg ?>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        $("#msgAlert").slideDown();
+                        $("#msgAlert").delay(3000);
+                        $("#msgAlert").slideUp();
+                    });
+                </script>
+            <?php
+            }
+            ?>
             <br>
             <h5>Settign - Account</h5>
             <hr>

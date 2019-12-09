@@ -8,7 +8,7 @@ $data = array(
     ":id" => $_GET['id_post']
 );
 if ($db->execute($data)) {
-    header("location:index.php");
+    header("location:index.php?msg=Konfirmasi Berhasil");
 } else {
     print_r($db->errorInfo());
 }

@@ -86,7 +86,7 @@ $key1 = $db->fetch(PDO::FETCH_ASSOC);
             get_produk();
 
             function get_produk() {
-                var id = <?= $_POST["id"] ?>;
+                var id = <?= $_POST["id"] ?>
                 $.ajax({
                     url: '../order/get_produk.php',
                     method: 'POST',
@@ -214,15 +214,14 @@ $key1 = $db->fetch(PDO::FETCH_ASSOC);
                         })
                     </script>
 
-                    <div class="col-sm-6 float-left">
+                    <center class="col-sm-6 float-left">
 
-                        <button type="button" class="btn btn-large btn-block btn-default print">Print</button>
+                        <button type="button" class="btn btn-small btn-primary print">Print</button>
 
-                    </div>
-                    <div class="col-sm-6 float-right">
-                        <button type="submit" class="btn btn-large btn-block btn-default">Konfirm</button>
-
-                    </div>
+                    </center>
+                    <center class="col-sm-6 float-right">
+                        <button type="submit" class="btn btn-small btn-primary">Konfirm</button>
+                    </center>
                 </form>
             </div>
         </div>

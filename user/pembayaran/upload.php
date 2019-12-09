@@ -29,6 +29,22 @@ if (isset($_GET["id_post"])) {
             ?>
         </div>
         <div class="col">
+            <?php
+            $msg = $_GET["msg"];
+            if (!empty($msg)) {
+                ?> <div class="alert alert-success" id="msgAlert" style="display:none;">
+                    <?= $msg ?>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        $("#msgAlert").slideDown();
+                        $("#msgAlert").delay(3000);
+                        $("#msgAlert").slideUp();
+                    });
+                </script>
+            <?php
+            }
+            ?>
             <div class="col">
                 <h4>Pembayaran - Order Id : <?= $_GET["id_post"] ?></h4>
             </div>
