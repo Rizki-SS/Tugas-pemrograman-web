@@ -123,7 +123,7 @@ $result_cat = $db->fetchAll();
                 var Router = $("#router").val();
                 var bulan = $("#jangkawaktu").val();
                 var subTotal = (harga_produk * parseFloat(bulan));
-                var total = parseFloat(subTotal) + (400000.00 * parseFloat(Router));
+                var total = parseFloat(subTotal) + (parseFloat(<?= $dataweb["HARGA_ROUTER"] ?>) * parseFloat(Router));
                 $("#total").val(total);
             }
 

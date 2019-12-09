@@ -128,9 +128,6 @@ $result = $db->fetchAll();
                 </div>
                 <div class="modal-body" id="view-conten">
 
-
-
-
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>

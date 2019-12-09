@@ -31,8 +31,8 @@ if ($_SESSION["tipe"] != 1) {
                         Blog</a></li>
         <li class="list-group-item"><a href="/admin/help/"><i class="fa fa-ticket" aria-hidden="true"></i>
                         HelpDesk</a></li>
-        <li class="list-group-item"><i class="fa fa-cog" aria-hidden="true"></i>
-                Setting</li>
+        <li class="list-group-item"><a href="/admin/setting"><i class="fa fa-cog" aria-hidden="true"></i>
+                        Setting</a></li>
         <li class="list-group-item"><a href="/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>
                         Logout</a></li>
 </ul>

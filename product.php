@@ -130,30 +130,27 @@ include('header.php')
         </div>
         <div class="col-sm-6">
             <div class="row">
-                <blockquote class="blockquote">
+                <blockquote class="blockquote" style="margin: 10px;">
                     <p class="mb-0">About :</p>
-                    <footer class="blockquote-footer">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Incidunt ea dolore, minus laborum, laboriosam sit provident deleniti cumque, aut tempora
-                        libero qui molestiae temporibus eveniet autem soluta inventore recusandae et.
-                        <a href="#">more ...</a>
+                    <footer class="blockquote-footer"><?= $dataweb["ABOUT"] ?>
                     </footer>
                 </blockquote>
             </div>
             <div class="row">
                 <div class="col">
-                    <p class="mb-0">Active Link</p>
+                    <p class="mb-0 text"><b>Active Link</b></p>
                     <ul class="list-unstyled">
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Produk</a></li>
+                        <li><a href="/blog.php">Blog</a></li>
+                        <li><a href="product.php">Produk</a></li>
                         <li><a href="#">Syarat & Ketentuan</a></li>
                     </ul>
                 </div>
                 <div class="col">
-                    <p class="mb-0">Contact :</p>
+                    <p class="mb-0 text"><b>Contact info :</b></p>
                     <ul class="list-unstyled">
-                        <li>Phone : </li>
-                        <li>Email : </li>
-                        <li>Alamat :</li>
+                        <li>Phone : <?= $dataweb["PHONE"] ?></li>
+                        <li>Email : <?= $dataweb["EMAIL"] ?></li>
+                        <li>Alamat :<?= $dataweb["ALAMAT"] ?></li>
                     </ul>
                 </div>
             </div>
@@ -163,7 +160,7 @@ include('header.php')
 <div class="card" style="margin-top :10px">
     <div class="panel panel-default">
         <div class="panel-footer text-center">
-            Panel footer
+            @inet 2019
         </div>
     </div>
 

@@ -13,8 +13,8 @@ $result_produk = $db1->fetchAll();
 <div class="container-fluid" id="cover">
     <div class="container">
         <div class="col" style="padding : 15rem 0 12rem">
-            <h1 class="text-white display-4">I_NET</h1>
-            <h5 class="text-white">Profesional sloution for<br> home and company network service</h5>
+            <h1 class="text-white display-4"><?= $dataweb["NAME"] ?></h1>
+            <h4 class="text-white"><?= $dataweb["SLOGAN"] ?></h4>
         </div>
     </div>
 </div>
@@ -129,7 +129,7 @@ $result_produk = $db1->fetchAll();
 <div class="container-fluid" id="contact" style="margin:30px 0px">
     <div class="container" style="padding:20px">
         <div class="row bg-light rounded" style="padding:10px ">
-            <h3 class="text-center m-auto">Contact Us : +666 666 777</h3>
+            <h3 class="text-center m-auto">Contact Us : <?= $dataweb["PHONE"] ?></h3>
         </div>
     </div style="font-family : sans-serif">
 </div>
@@ -196,10 +196,7 @@ $result_blog = $db->fetchAll();
             <div class="row">
                 <blockquote class="blockquote" style="margin: 10px;">
                     <p class="mb-0">About :</p>
-                    <footer class="blockquote-footer">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Incidunt ea dolore, minus laborum, laboriosam sit provident deleniti cumque, aut tempora
-                        libero qui molestiae temporibus eveniet autem soluta inventore recusandae et.
-                        <a href="#">more ...</a>
+                    <footer class="blockquote-footer"><?= $dataweb["ABOUT"] ?>
                     </footer>
                 </blockquote>
             </div>
@@ -207,7 +204,7 @@ $result_blog = $db->fetchAll();
                 <div class="col">
                     <p class="mb-0 text"><b>Active Link</b></p>
                     <ul class="list-unstyled">
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="/blog.php">Blog</a></li>
                         <li><a href="product.php">Produk</a></li>
                         <li><a href="#">Syarat & Ketentuan</a></li>
                     </ul>
@@ -215,9 +212,9 @@ $result_blog = $db->fetchAll();
                 <div class="col">
                     <p class="mb-0 text"><b>Contact info :</b></p>
                     <ul class="list-unstyled">
-                        <li>Phone : </li>
-                        <li>Email : </li>
-                        <li>Alamat :</li>
+                        <li>Phone : <?= $dataweb["PHONE"] ?></li>
+                        <li>Email : <?= $dataweb["EMAIL"] ?></li>
+                        <li>Alamat :<?= $dataweb["ALAMAT"] ?></li>
                     </ul>
                 </div>
             </div>
@@ -227,7 +224,7 @@ $result_blog = $db->fetchAll();
 <div class="card" style="margin-top :10px">
     <div class="panel panel-default">
         <div class="panel-footer text-center">
-            Panel footer
+            @inet 2019
         </div>
     </div>
 

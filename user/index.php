@@ -5,7 +5,7 @@ if (!isset($_SESSION["id"])) {
     header("location:../index.php");
 }
 
-header("location:/user/pembayaran")
+header("location:/user/order")
 ?>
 
 <div class="container">

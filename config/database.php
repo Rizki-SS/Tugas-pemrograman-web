@@ -13,6 +13,7 @@ $Koneksi = new PDO(
     $password
 );
 
-if ($Koneksi) {
-    // echo 'adadd';
-}
+$querydata = "SELECT * FROM WEBSITE_INFO";
+$db = $Koneksi->prepare($querydata);
+$db->execute();
+$dataweb = $db->fetch(PDO::FETCH_ASSOC);

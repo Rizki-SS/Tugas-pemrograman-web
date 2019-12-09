@@ -25,7 +25,7 @@ $result = $db->fetch(PDO::FETCH_ASSOC);
             <br>
             <h5>Settign - Account</h5>
             <hr>
-            <form method="POST" action="user-proses.php">
+            <form method="POST" action="../admin/setting/user-proses.php">
                 <div class="form-group row">
                     <label for="user" class="col-sm-2 col-form-label">Username</label>
                     <div class="col-sm-8">
@@ -55,7 +55,7 @@ $result = $db->fetch(PDO::FETCH_ASSOC);
             <br>
             <h5>Passoword Setting - Account</h5>
             <hr>
-            <form method="POST" action="user-proses.php">
+            <form method="POST" action="../admin/setting/user-proses.php">
                 <div class="form-group row">
                     <label for="alamat" class="col-sm-2 col-form-label">New Password</label>
                     <div class="col-sm-8">
@@ -71,6 +71,61 @@ $result = $db->fetch(PDO::FETCH_ASSOC);
                 <div class="form-group row">
                     <div class="col-sm-8">
                         <input type="hidden" name="id" value="<?= $_SESSION["id"] ?>">
+                        <input type="submit" value="Simpan Password">
+                    </div>
+                </div>
+            </form>
+
+            <br>
+            <h5>Website Setting - Account</h5>
+            <hr>
+            <form method="POST" action="/admin/setting/websetting.php">
+                <div class="form-group row">
+                    <label for="alamat" class="col-sm-2 col-form-label">Name Website</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="name" placeholder="Title of your website" value="<?= $dataweb["NAME"] ?>">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="alamat" class="col-sm-2 col-form-label">Website Slogan</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="slogan" placeholder="Slogan of your website" value="<?= $dataweb["SLOGAN"] ?>">
+                    </div>
+                </div>
+                <div class=" form-group row">
+                    <label for="alamat" class="col-sm-2 col-form-label">About</label>
+                    <div class="col-sm-8">
+                        <textarea name="about" class="form-control">
+                            <?= $dataweb["ABOUT"] ?>
+                        </textarea>
+                    </div>
+                </div>
+                <div class=" form-group row">
+                    <label for="alamat" class="col-sm-2 col-form-label">PHONE</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="phone" placeholder="Phone Contact" value="<?= $dataweb["PHONE"] ?>">
+                    </div>
+                </div>
+                <div class=" form-group row">
+                    <label for="alamat" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="email" placeholder="Email Contact" value="<?= $dataweb["EMAIL"] ?>">
+                    </div>
+                </div>
+                <div class=" form-group row">
+                    <label for="alamat" class="col-sm-2 col-form-label">ALAMAT</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="alamat" placeholder="alamat Contact" value="<?= $dataweb["ALAMAT"] ?>">
+                    </div>
+                </div>
+                <div class=" form-group row">
+                    <label for="alamat" class="col-sm-2 col-form-label">Harga router</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="router" placeholder="Phone Contact" value="<?= $dataweb["HARGA_ROUTER"] ?>">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-8">
                         <input type="submit" value="Simpan Password">
                     </div>
                 </div>
