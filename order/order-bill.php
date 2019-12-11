@@ -124,26 +124,26 @@ if (!isset($_POST["id"])) {
                         <div class="col text-right">
                             <div class="form-group">
                                 <label for="Nama">Nama</label>
-                                <input class="form-control" type="text" name="nama">
+                                <input class="form-control" type="text" name="nama" placeholder="Nama Lengkap">
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
-                                <input class="form-control" type="text" name="alamat">
+                                <input class="form-control" type="text" name="alamat" placeholder="Alamat Lengkap Lokasi Pemasangan">
                             </div>
                             <div class="form-group">
                                 <label for="telp">Telp</label>
-                                <input class="form-control" type="text" name="telp">
+                                <input class="form-control" type="text" name="telp" placeholder="Nomer telp yang masih aktif">
                             </div>
                             <div class="form-group">
                                 <label for="jenis_Pembayaran">Jenis Pembayaran</label>
                                 <select class="form-control" id="jenis_pembayaran" name="jenis_pembayaran">
                                     <option value="1">Bayar Saat Pemasangan</option>
-                                    <option value="2">Bayar Tranfer Bank</option>
+                                    <option value="2" selected>Bayar Tranfer Bank</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="my-textarea">Keterangan</label>
-                                <textarea id="my-textarea" class="form-control" name="" rows="3"></textarea>
+                                <textarea id="my-textarea" class="form-control" name="ket" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="col-sm-4" style="border-left:1px solid blue" style="padding-top: 1rem">
@@ -174,6 +174,7 @@ if (!isset($_POST["id"])) {
                                         <td>: <input type="text" class=" w-75" name="total" id="total" readonly style="border:none;background: #fff" value="<?= $_POST["total"] ?>">
                                         </td>
                                     </tr>
+
                                 </tbody>
                             </table>
                             <button type=" submit" class="btn btn-primary">Korfirmasi</button>

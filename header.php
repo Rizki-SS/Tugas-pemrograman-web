@@ -9,7 +9,16 @@ session_start();
     <script src="/bootstrap-4.3.1/jquery-3.4.1.min.js"></script>
     <script src="/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/cd4fbae50a.js"></script>
+    <style>
+        .card-body ul li {
+            list-style: none;
+        }
 
+        .card-body ul {
+
+            margin-left: -2rem;
+        }
+    </style>
 </head>
 
 <body>

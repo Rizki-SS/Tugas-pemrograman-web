@@ -94,10 +94,10 @@ include('header.php');
 </div>
 </div>
 
-<div class="card" style="margin-top :10px">
+<div class="card fixed-bottom" style="margin-top :10px">
     <div class="panel panel-default">
         <div class="panel-footer text-center">
-            @inet 2019
+            Copyright @inet 2019
         </div>
     </div>
 

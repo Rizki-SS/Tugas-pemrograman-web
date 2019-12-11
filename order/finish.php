@@ -194,6 +194,14 @@ $key1 = $db->fetch(PDO::FETCH_ASSOC);
                                         <td>: <input type="text" name="metode" id="total" readonly style="border:none;background: #fff" value="<?= $b ?>">
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="form-group">
+                                                <label for="my-textarea">Keterangan</label>
+                                                <textarea id="my-textarea" class="form-control" name="ket" rows="3"><?= $_POST["ket"] ?></textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

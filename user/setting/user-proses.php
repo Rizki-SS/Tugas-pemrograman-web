@@ -25,12 +25,10 @@ if (isset($_POST["simpan"])) {
     $db->execute();
     $result = $db->fetch(PDO::FETCH_ASSOC);
     if ($_POST["OldPassword"] == $result["PASSWORD"]) {
-        $query = "UPDATE MEMBER SET USERNAME=:user,EMAIL=:email,ALAMAT=:alamat WHERE USER_ID = :id";
+        $query = "UPDATE MEMBER SET PASSWORD=:password WHERE USER_ID = :id";
         $db = $Koneksi->prepare($query);
         $arry = array(
-            ":user" => $_POST["user"],
-            ":email" => $_POST["email"],
-            ":alamat" => $_POST["alamat"],
+            ":password" => $_POST["newPassword"],
             ":id" => $_POST["id"]
         );
         if ($db->execute($arry)) {

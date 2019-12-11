@@ -39,7 +39,7 @@ $result_produk = $db1->fetchAll();
                 <img src="img/icon 1-Layanan Terbaik.png" alt="" srcset="" width="50%" style="margin:10px auto">
                 <div class="card-body">
                     <h5 class="card-title">Layanan Terbaik</h5>
-                    <p class="card-text">Customer Care dan Network Operation Center selalu tersedia 24 x 7 x 365, Anda dapat menghubungi kami melalui telepon, email atau live chat.</p>
+                    <p class="card-text">Customer Care dan Network Operation Center selalu tersedia 24 x 7 x 365, Anda dapat menghubungi kami melalui telepon, email atau chat.</p>
                 </div>
             </div>
         </div>
@@ -206,7 +206,7 @@ $result_blog = $db->fetchAll();
 <div class="card" style="margin-top :10px">
     <div class="panel panel-default">
         <div class="panel-footer text-center">
-            @inet 2019
+            Copyright @inet 2019
         </div>
     </div>
 

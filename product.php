@@ -160,7 +160,7 @@ include('header.php')
 <div class="card" style="margin-top :10px">
     <div class="panel panel-default">
         <div class="panel-footer text-center">
-            @inet 2019
+            Copyright @inet 2019
         </div>
     </div>
 

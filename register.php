@@ -17,7 +17,7 @@ if (isset($_POST["register"])) {
             $msg = "password anda salah";
         }
     } else {
-        // $msg = "Panjang Charakter Password Minimal 8";
+        $msg = "Panjang Charakter Password Minimal 6";
         // $msg = ($password = md5($_POST['password']));
     }
 
@@ -124,10 +124,10 @@ include('header.php');
 </div>
 </div>
 
-<div class="card" style="margin-top :10px">
+<div class="card fixed-bottom" style="margin-top :10px">
     <div class="panel panel-default">
         <div class="panel-footer text-center">
-            @inet 2019
+            Copyright @inet 2019
         </div>
     </div>
 

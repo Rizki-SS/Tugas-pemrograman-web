@@ -107,7 +107,7 @@ if (isset($_GET["id_post"])) {
                                             <td colspan="2">
                                                 <div class="form-group">
                                                     <label for="my-textarea">Keterangan</label>
-                                                    <textarea disabled id="my-textarea" class="form-control" name="ket" rows="3"></textarea>
+                                                    <textarea disabled id="my-textarea" class="form-control" name="ket" rows="3"><?= $result["KETERANGAN"] ?></textarea>
                                                 </div>
                                             </td>
                                         </tr>
